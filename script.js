@@ -9,5 +9,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Simple alert to show that the script is working
-alert("Welcome to ChatQube!");
+// Hamburger menu functionality
+const hamburger = document.querySelector('.hamburger');
+const navContainer = document.querySelector('.nav-container');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navContainer.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navContainer.classList.remove('active');
+    });
+});
